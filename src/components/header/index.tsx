@@ -16,12 +16,21 @@ import Mic from '../../assets/microfone-gravador.png'
 import Logo from '../../assets/YouTube-Logo.png';
 import CameraIcon from '../../assets/video.png';
 import Bell from '../../assets/sino.png';
+import { MenuContext } from "../../contexts/menuContexts";
+import { useContext } from "react";
+
+
+
 
 function Header() {
+
+    const { menuState, turnMenu } = useContext(MenuContext);
+
     return (
+
         <Container>
             <LogoContainer>
-                <ButtonContainer margin="0 10px 0 0">
+                <ButtonContainer onClick={turnMenu} margin="0 10px 0 0">
                     <ButtonIcon alt="" src={HamburguerIcon} />
                 </ButtonContainer>
                 <img
@@ -55,6 +64,7 @@ function Header() {
             </HeaderButtons>
 
         </Container>
+        
     )
 }
 
