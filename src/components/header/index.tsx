@@ -24,7 +24,7 @@ import { useContext } from "react";
 
 function Header() {
 
-    const { menuState, turnMenu } = useContext(MenuContext);
+    const { turnMenu } = useContext(MenuContext);
 
     return (
 
@@ -34,8 +34,8 @@ function Header() {
                     <ButtonIcon alt="" src={HamburguerIcon} />
                 </ButtonContainer>
                 <img
-                    style={{ cursor: 'pointer', width: '100px' }}
                     alt=""
+                    style={{ cursor: 'pointer', width: '100px' }}
                     src={Logo}
                 />
             </LogoContainer>
