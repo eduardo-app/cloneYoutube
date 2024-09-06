@@ -12,7 +12,7 @@ function App() {
         <Header></Header>
         <div style={{ width: "100%", display: "flex" }}>
           <Menu />
-          <div style={{width: "100%", padding: "56px 0 0 0"}}>
+          <div style={{width: "100%", padding: "56px 0 0 0", boxSizing: "border-box", display: "flex", justifyContent: "center"}}>
             <Routes>
               <Route path="/" element={<Home/>}/>
               <Route path="/libary" element={<Libary/>}/>
