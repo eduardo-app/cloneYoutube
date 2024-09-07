@@ -5,14 +5,14 @@ export const Container = styled.header<{menuState: boolean}>`
     width: ${({ menuState }) => menuState? '250px' : '100px' };
     height: 100vh;
     box-sizing: border-box;
-    padding: 0 12px 0 12px;
+    padding: "0 12px 0 12px";
     display: flex;
     align-items: center;
     flex-direction: column;
     overflow-y: auto;
     row-gap: ${({ menuState }) => menuState? '0' : '10px' };
     position: sticky;
-    top: 56px;
+    top: 55px;
 `;
 
 export const MenuItem = styled.div<{menuState: boolean}>`

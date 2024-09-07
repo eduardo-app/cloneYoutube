@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-export const Container = styled.div<{menuState: boolean}>`
+export const Container = styled.div`
+    width: 100%;
+    display: grid;
+`
+
+export const VideosContainer = styled.div<{menuState: boolean}>`
     width: 100%;
     max-width: 1600px;
     display: grid;
@@ -9,3 +14,4 @@ export const Container = styled.div<{menuState: boolean}>`
     row-gap: 50px;
 
 `
+

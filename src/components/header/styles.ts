@@ -9,7 +9,9 @@ export const Container = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
+    position: absolute;
+    top: 0;
+    z-index: 99;
 `;
 
 export const LogoContainer = styled.div`
