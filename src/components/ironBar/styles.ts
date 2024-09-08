@@ -74,20 +74,22 @@ export const ButtonIcon = styled.img`
   width: 40px;
 `;
 
-export const ArrowContainerL = styled.div`
-  display: flex;
+export const ArrowContainerL = styled.div<{scroll : number}>`
+  display: ${({scroll}) => scroll > 0? "flex" : "none"};
   justify-content: left;
   align-items: center;
   position: sticky;
   left: 0;
+  z-index: 1;
 `;
 
-export const ArrowContainerR = styled.div`
-  display: flex;
+export const ArrowContainerR = styled.div<{scroll : number}>`
+  display: ${({scroll}) => scroll < 1600? "flex" : "none"};
   justify-content: right;
   align-items: center;
   position: sticky;
   right: 0;
+  z-index: 1;
 `;
 
 export const ArrowBox = styled.div`

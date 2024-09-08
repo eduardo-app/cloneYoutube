@@ -1,7 +1,6 @@
 import { createContext, ReactNode, useState } from "react";
 
 
-
 interface StateContextType {
     menuState: boolean;
     turnMenu: () => void;
@@ -13,8 +12,6 @@ const defaultState = {
 };
 
 export const MenuContext = createContext<StateContextType>(defaultState);
-
-//export const MenuContext = createContext();
 
 export const MenuStateProvider = ({ children }: { children: ReactNode }) => {
     const [menuState, setMenu] = useState(true);

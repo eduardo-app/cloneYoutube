@@ -11,6 +11,7 @@ import {
 } from "./styles";
 import Arrow from "../../assets/arrow-icon.png";
 import { ArrowContainerL, ArrowContainerR } from "./styles";
+import { useState } from "react";
 
 const chips = [
   { name: "Tudo", link: "/" },
@@ -48,20 +49,20 @@ const chips = [
 function IronBar() {
   const navigate = useNavigate();
 
-  const GoToL = () => {
-    document.getElementById("IronBar")?.scroll(-200, 0);
+const [scroll, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(scroll + 400);
   };
-
-  const GoToR = () => {
-    document.getElementById("IronBar")?.scroll(+200, 0);
+  const decrement = () => {
+    setCount(scroll - 400);
   };
+  document.getElementById("IronBar")?.scroll({ left: scroll, behavior: "smooth" });
 
-
-  const teste = document.getElementById("IronBar")?.scrollWidth
 
   return (
     <Container id="IronBar">
-      <ArrowContainerL onClick={GoToL}>
+      <ArrowContainerL scroll={scroll} onClick={decrement}>
         <ArrowBox>
           <ButtonContainer>
             <ButtonIcon style={{ transform: "scaleX(-1)" }} src={Arrow} />
@@ -76,7 +77,7 @@ function IronBar() {
           </ChipTag>
         ))}
       </ChipContainer>
-      <ArrowContainerR onClick={GoToR}>
+      <ArrowContainerR scroll={scroll} onClick={increment}>
         <ArrowGradientR />
         <ArrowBox>
           <ButtonContainer>
